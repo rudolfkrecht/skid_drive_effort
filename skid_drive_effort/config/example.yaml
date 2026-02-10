@@ -1,0 +1,23 @@
+drive_effort_proxy:
+  ros__parameters:
+    joint_states_topic: /j100_0000/platform/joint_states
+    imu_topic: /j100_0000/sensors/imu_0/data
+    out_topic: /drive_effort_lr
+
+    wheel_radius: 0.098  # meters (set per robot)
+
+    joint_fl: front_left_wheel_joint
+    joint_rl: rear_left_wheel_joint
+    joint_fr: front_right_wheel_joint
+    joint_rr: rear_right_wheel_joint
+
+    # Normalized model params (proxy scaling; not necessarily physical torque)
+    a_v: 1.0
+    b_v: 0.08
+    f_c: 0.20
+    v_eps: 0.03
+    a_r: 2.0
+    b_r: 0.10
+
+    ema_alpha: 0.25
+    max_abs_effort: 200.0
